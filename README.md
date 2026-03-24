@@ -1,90 +1,55 @@
-# IteraTools API — Examples
+# IteraTools Examples
 
-> **80+ AI tools. One API key. Pay-per-use.**
+Real-world examples for the [IteraTools API](https://iteratools.com) — 80+ pay-per-use AI tools for agents and automation.
 
-[![API Docs](https://img.shields.io/badge/docs-api.iteratools.com-blue)](https://api.iteratools.com/docs)
-[![Get API Key](https://img.shields.io/badge/get_key-iteratools.com%2Fkeys-green)](https://iteratools.com/keys)
-
-Real-world, copy-paste ready examples for the [IteraTools API](https://api.iteratools.com).  
-Each folder is self-contained with shell (`curl`) and Python examples.
-
----
-
-## What is IteraTools?
-
-IteraTools is a multi-tool API for AI agents and developers:
-- **80+ tools** — image generation, browser automation, web scraping, TTS, OCR, code execution, translation, and more
-- **Pay-per-use** — no monthly subscription, pay only for what you call
-- **One key** — unified API for dozens of capabilities
-- **AI-native** — designed for agents, automations, and pipelines
-
----
-
-## Quick Start
-
-```bash
-# 1. Get your API key at https://iteratools.com/keys
-export ITERA_KEY="it-XXXX-XXXX-XXXX"
-
-# 2. Test it
-curl -X POST https://api.iteratools.com/translate \
-  -H "Authorization: Bearer $ITERA_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{"text": "Hello, world!", "target": "pt"}'
-```
-
----
+## Get an API Key
+1. Visit [iteratools.com/keys](https://iteratools.com/keys)
+2. Add credits (start with $1)
+3. Set the env var: `export ITERA_KEY="it-XXXX-XXXX-XXXX"`
 
 ## Examples
 
-| # | Folder | What it does |
-|---|--------|-------------|
-| 01 | [image-pipeline](./01-image-pipeline/) | Generate image with Flux + remove background |
-| 02 | [web-research-agent](./02-web-research-agent/) | Search → scrape → summarize with AI |
-| 03 | [memory-agent](./03-memory-agent/) | Agent with persistent vector memory |
-| 04 | [document-processing](./04-document-processing/) | Extract PDF text + AI summary |
-| 05 | [browser-automation](./05-browser-automation/) | Screenshot pages + describe with vision |
-| 06 | [code-execution](./06-code-execution/) | Run Python in secure sandbox + data analysis |
-| 07 | [text-pipeline](./07-text-pipeline/) | Translate + TTS + sentiment analysis |
-| 08 | [github-agent](./08-github-agent/) | Search repos + analyze + create issues |
-| 09 | [calendar-scheduling](./09-calendar-scheduling/) | Check availability + schedule meetings |
-| 10 | [ai-chat-with-tools](./10-ai-chat-with-tools/) | Multi-tool AI agent with search + crawl |
+| # | Folder | What it does | Cost |
+|---|--------|--------------|------|
+| 01 | [image-pipeline](./01-image-pipeline/) | Generate image + remove background | ~$0.008 |
+| 02 | [web-research-agent](./02-web-research-agent/) | Search + scrape + summarize | ~$0.005 |
+| 03 | [memory-agent](./03-memory-agent/) | AI agent with persistent memory | ~$0.010 |
+| 04 | [document-processing](./04-document-processing/) | Extract PDF + AI summary | ~$0.004 |
+| 05 | [browser-automation](./05-browser-automation/) | Screenshot + describe + interact | ~$0.011 |
+| 06 | [code-execution](./06-code-execution/) | Run Python in secure sandbox | $0.005 |
+| 07 | [text-pipeline](./07-text-pipeline/) | Translate + TTS + sentiment | ~$0.003 |
+| 08 | [github-agent](./08-github-agent/) | Search repos + create issues | ~$0.003 |
+| 09 | [calendar-scheduling](./09-calendar-scheduling/) | Check availability + schedule | ~$0.003 |
+| 10 | [ai-chat-with-tools](./10-ai-chat-with-tools/) | Multi-tool research agent | ~$0.010 |
 
----
+## Pricing
 
-## Pricing Summary
+All tools are pay-per-use. Typical costs:
 
-| Category | Tools | Price/call |
-|----------|-------|-----------|
-| Utilities | Weather, Translation, QR, DNS, WHOIS | $0.001 |
-| Web | Scrape, Search, RSS | $0.002 |
-| Media | TTS, OCR, Charts, PDF | $0.003 |
-| AI/Generation | Image (Flux), Vision, AI Chat | $0.005 |
-| Browser | Playwright (up to 20 actions) | $0.005 |
-| Code Execution | E2B sandbox (Python/Node) | $0.005 |
+| Tool | Endpoint | Price |
+|------|----------|-------|
+| Image Generate (Flux 1.1 Pro) | POST /image/generate | $0.005 |
+| Image Fast (Flux Schnell) | POST /image/fast | $0.002 |
+| Remove Background | POST /image/rembg | $0.003 |
+| Web Search | POST /search | $0.001 |
+| Web Scrape | POST /scrape | $0.002 |
+| Web Crawl | POST /crawl | $0.010 |
+| Screenshot | POST /screenshot | $0.003 |
+| PDF Extract | POST /pdf/extract | $0.002 |
+| AI Chat (GPT-4o-mini) | POST /ai/chat | $0.005 |
+| Text to Speech | POST /tts | $0.001 |
+| Translate | POST /translate | $0.002 |
+| Summarize | POST /summarize | $0.002 |
+| Sentiment Analysis | POST /sentiment | $0.001 |
+| Code Execute (sandbox) | POST /code_execute | $0.005 |
+| Browser Automation | POST /browser/act | $0.005 |
+| Memory Store | POST /memory/upsert | $0.003 |
+| Memory Search | POST /memory/search | $0.002 |
+| GitHub Issue | POST /github/issue | $0.002 |
 
----
+## More
 
-## Setup
-
-All examples use the `ITERA_KEY` environment variable:
-
-```bash
-export ITERA_KEY="it-XXXX-XXXX-XXXX"
-```
-
-Python examples require only `requests`:
-
-```bash
-pip install requests
-```
-
-Shell examples require `curl` and `python3` (for JSON parsing).
-
----
-
-## Links
-
-- 📚 [Full API Docs](https://api.iteratools.com/docs)
-- 🔑 [Get API Key](https://iteratools.com/keys)
-- 🌐 [IteraTools Website](https://iteratools.com)
+- [Full API docs](https://docs.iteratools.com)
+- [All 80+ tools](https://iteratools.com/tools/)
+- [MCP server](https://www.npmjs.com/package/mcp-iteratools) — use with Claude, Cursor, Cline
+- [OpenAPI spec](https://api.iteratools.com/openapi.json)
